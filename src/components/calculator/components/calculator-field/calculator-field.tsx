@@ -1,22 +1,20 @@
-import { useCalculatorContext } from "../../context/use-calculator-context";
 import { Slider, InputNumber } from 'antd';
 
-export const CalculatorField = ({ }) => {
-    const { creditSum, changeCreditSum } = useCalculatorContext();
+import { DEFAULT_FIELD_STEP, REG_EXP_FOR_FORMAT_MONEY_RANK } from "./constants";
+import { useCalculatorField } from './use-calculator-field';
 
-    const onChange = (value: number | null) => {
-        changeCreditSum(Number(value));
-    }
+export const CalculatorField = ({ }) => {
+    const { creditSum, onChange, minFieldValue, maxFiedlValue } = useCalculatorField()
 
     return <>
         <InputNumber
             style={{ width: '100%' }}
             value={creditSum}
             onChange={onChange}
-            min={300_000}
-            max={70_000_000}
-            formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+            min={minFieldValue}
+            max={maxFiedlValue}
+            formatter={(value) => `${value}`.replace(REG_EXP_FOR_FORMAT_MONEY_RANK, ' ')}
         />
-        <Slider onChange={onChange} value={creditSum} min={300_000} max={70_000_000} step={10_000}></Slider>
+        <Slider onChange={onChange} value={creditSum} min={minFieldValue} max={maxFiedlValue} step={DEFAULT_FIELD_STEP}></Slider>
     </>
 }
