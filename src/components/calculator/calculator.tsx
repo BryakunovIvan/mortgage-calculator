@@ -1,5 +1,5 @@
 import { CalculatorProvider } from "./calculator-provider"
-import { CalculatorField } from "./components/calculator-field/calculator-field"
+import { CalculatorField } from "./components/calculator-field"
 
 export const Calculator = () => {
     return <CalculatorProvider>
