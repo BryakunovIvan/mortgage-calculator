@@ -1,7 +1,7 @@
-import { useCalculatorContext } from "../../context/use-calculator-context";
-import { DEFAULT_MAX_FIELD_VALUE, DEFAULT_MIN_FIELD_VALUE } from "./constants";
-import { getContextActionName } from "./helpers";
-import { TFieldName } from "./models";
+import { useCalculatorContext } from '../../context/use-calculator-context';
+import { DEFAULT_MAX_FIELD_VALUE, DEFAULT_MIN_FIELD_VALUE } from './constants';
+import { getContextActionName } from './helpers';
+import { TFieldName } from './models';
 
 export const useCalculatorField = (fieldName: TFieldName) => {
     const context = useCalculatorContext();
@@ -11,7 +11,7 @@ export const useCalculatorField = (fieldName: TFieldName) => {
 
     const onChange = (value: number | null) => {
         onChangeContextValue(Number(value));
-    }
+    };
 
     const minFieldValue = DEFAULT_MIN_FIELD_VALUE;
     const maxFiedlValue = DEFAULT_MAX_FIELD_VALUE;
@@ -20,6 +20,6 @@ export const useCalculatorField = (fieldName: TFieldName) => {
         onChange,
         value,
         minFieldValue,
-        maxFiedlValue
-    }
-}
+        maxFiedlValue,
+    };
+};

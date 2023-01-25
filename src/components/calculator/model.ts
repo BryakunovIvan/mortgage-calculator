@@ -1,1 +1,1 @@
-export interface ICalculatorPublicProps { }
+export interface ICalculatorPublicProps {}
