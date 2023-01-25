@@ -2,19 +2,14 @@ import { createContext } from "react";
 
 const emptyFn = () => { };
 
-export interface ICalculatorMainValues {
+export interface ICalculatorContext {
     rate: number;
     creditSum: number;
     creditTerm: number;
-}
-
-export interface ICalculatorMainAction {
     changeRate: React.Dispatch<React.SetStateAction<number>>,
     changeCreditTerm: React.Dispatch<React.SetStateAction<number>>,
     changeCreditSum: React.Dispatch<React.SetStateAction<number>>,
-}
-
-export interface ICalculatorContext extends ICalculatorMainValues, ICalculatorMainAction { };
+};
 
 const defaultValue: ICalculatorContext = {
     rate: 10,

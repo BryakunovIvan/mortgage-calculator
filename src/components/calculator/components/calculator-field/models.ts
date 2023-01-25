@@ -1,4 +1,4 @@
-import { ICalculatorMainValues } from "../../context";
+export type TFieldName = 'rate' | 'creditSum' | 'creditTerm';
+export type TActions = 'changeRate' | 'changeCreditTerm' | 'changeCreditSum';
 
-// TODO: Сузить типы fieldName до суммы кредита и первоначального взноса
-export type TProps = { fieldName: keyof ICalculatorMainValues };
+export type TProps = { fieldName: TFieldName };
