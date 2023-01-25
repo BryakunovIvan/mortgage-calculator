@@ -1,4 +1,4 @@
-export type TFieldName = 'creditSum' | 'creditTerm';
-export type TActions = 'changeCreditTerm' | 'changeCreditSum';
+export type TFieldName = 'creditSum';
+export type TActions = 'changeCreditSum';
 
 export type TProps = { fieldName: TFieldName };

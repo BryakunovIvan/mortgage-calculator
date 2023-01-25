@@ -4,8 +4,8 @@ import { DEFAULT_FIELD_STEP, REG_EXP_FOR_FORMAT_MONEY_RANK } from "./constants";
 import { TProps } from './models';
 import { useCalculatorField } from './use-calculator-field';
 
-
-export const CalculatorField = ({ fieldName = 'creditTerm' }: TProps) => {
+/** Компонент для отображения/изменения сумм калькулятора. Суммы кредита и первоначального взноса*/
+export const CalculatorField = ({ fieldName = 'creditSum' }: TProps) => {
     const { value, onChange, minFieldValue, maxFiedlValue } = useCalculatorField(fieldName)
 
     return <>
