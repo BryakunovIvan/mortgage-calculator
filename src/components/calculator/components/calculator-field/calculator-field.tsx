@@ -1,11 +1,11 @@
 import { Slider, InputNumber } from 'antd';
 
-import { DEFAULT_FIELD_STEP, REG_EXP_FOR_FORMAT_MONEY_RANK } from "./constants";
+import { DEFAULT_FIELD_NAME, DEFAULT_FIELD_STEP, REG_EXP_FOR_FORMAT_MONEY_RANK } from "./constants";
 import { TProps } from './models';
 import { useCalculatorField } from './use-calculator-field';
 
 /** Компонент для отображения/изменения сумм калькулятора. Суммы кредита и первоначального взноса*/
-export const CalculatorField = ({ fieldName = 'creditSum' }: TProps) => {
+export const CalculatorField = ({ fieldName = DEFAULT_FIELD_NAME }: TProps) => {
     const { value, onChange, minFieldValue, maxFiedlValue } = useCalculatorField(fieldName)
 
     return <>
