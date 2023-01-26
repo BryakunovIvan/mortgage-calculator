@@ -6,7 +6,8 @@ export const Calculator = () => {
     return (
         <CalculatorProvider>
             <CalculatorField fieldName="creditSum" />
-            <FieldValue fieldName="creditSum"></FieldValue>
+            <CalculatorField fieldName="initialFee" />
+            <FieldValue fieldName="creditSum" />
         </CalculatorProvider>
     );
 };
