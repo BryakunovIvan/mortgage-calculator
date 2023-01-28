@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ICalculatorContext } from '../context';
+import { getMontlyPayment } from '../helpers';
 
 export const useCalculator = (): ICalculatorContext => {
     const [rate, setRate] = useState(12.49);
@@ -12,9 +13,7 @@ export const useCalculator = (): ICalculatorContext => {
         const loanSum = creditSum - initialFee;
         const montlyRate = rate / (100 * 12);
 
-        const montlyPayment =
-            loanSum *
-            (montlyRate / (1 - Math.pow(1 + montlyRate, 0 - creditTerm)));
+        const montlyPayment = getMontlyPayment(loanSum, montlyRate, creditTerm);
 
         setMonthlyPayment(montlyPayment);
     }, [rate, creditTerm, creditSum, initialFee]);
